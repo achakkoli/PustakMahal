@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pustakmahal - Your Online Bookstore</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="js/auth.js" defer></script>
+    <script src="js/books.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,36 +16,41 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#books">Books</a></li>
+                <li><a href="#cart">Cart</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section id="home">
         <h2>Welcome to Pustakmahal</h2>
-        <p>Your one-stop shop for books of all genres.</p>
+        <div id="loginSection">
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button onclick="login()">Login</button>
+        </div>
+        <p id="welcomeMessage"></p>
     </section>
-    
+
     <section id="books">
-        <h2>Featured Books</h2>
-        <div class="book">
-            <img src="book1.jpg" alt="Book 1">
-            <p><strong>Title:</strong> The Art of Learning</p>
-            <p><strong>Author:</strong> Josh Waitzkin</p>
-        </div>
-        <div class="book">
-            <img src="book2.jpg" alt="Book 2">
-            <p><strong>Title:</strong> The Code Breakers</p>
-            <p><strong>Author:</strong> David Kahn</p>
-        </div>
+        <h2>Books</h2>
+        <input type="text" id="searchInput" placeholder="Search books..." onkeyup="searchBooks()" />
+        <div id="booksContainer"></div>
     </section>
-    
+
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: support@pustakmahal.com</p>
         <p>Phone: +123 456 7890</p>
     </section>
-    
+
     <footer>
         <p>&copy; 2025 Pustakmahal. All Rights Reserved.</p>
     </footer>
