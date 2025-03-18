@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - PustakMahal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>PustakMahal</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="cart.html">Cart</a> |
+      <a href="login.html" id="login-link">Login</a>
+      <a href="#" id="logout-link" style="display:none;">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Checkout</h2>
+    <p>Total Amount: <span id="checkout-total"></span></p>
+    <button id="pay-button">Pay with Stripe</button>
+  </main>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
